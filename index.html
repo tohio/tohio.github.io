@@ -264,6 +264,12 @@
     .ghost-layer{display:none}
     .w-badge{display:none}
     .scroll-cue{display:none}
+    .nav-name{font-size:.72rem;white-space:nowrap;}
+    nav{padding:1rem 3vw;}
+    .nav-links a{font-size:.72rem;padding:.25rem .45rem;}
+    .nav-num{display:none;}
+    /* Hide Platform link on mobile - keep nav tight */
+    .nav-hide-mobile{display:none;}
   }
   @media(max-width:520px){ .pgrid{grid-template-columns:1fr} }
 </style>
@@ -277,8 +283,8 @@
   <ul class="nav-links">
     <li><span class="nav-num">01</span><a href="#work" class="active">Work</a></li>
     <li><div class="ndiv"></div></li>
-    <li><a href="#platform">Platform</a></li>
-    <li><div class="ndiv"></div></li>
+    <li class="nav-hide-mobile"><a href="#platform">Platform</a></li>
+    <li class="nav-hide-mobile"><div class="ndiv"></div></li>
     <li><a href="#about">About</a></li>
     <li><div class="ndiv"></div></li>
     <li><a href="#contact">Contact</a></li>
@@ -573,9 +579,7 @@
       <a class="clink" href="https://github.com/tohio/ai-platform" target="_blank" rel="noopener">
         <span class="cl-label">AI Platform</span><span class="cl-val">View full architecture</span><span class="cl-arr">↗</span>
       </a>
-      <a class="clink" href="mailto:tohio@hotmail.com">
-        <span class="cl-label">Email</span><span class="cl-val">tohio@hotmail.com</span><span class="cl-arr">↗</span>
-      </a>
+
       <a class="clink" href="https://www.linkedin.com/in/tijani-o-b4563026" target="_blank" rel="noopener">
         <span class="cl-label">LinkedIn</span><span class="cl-val">linkedin.com/in/tijani-o-b4563026</span><span class="cl-arr">↗</span>
       </a>
@@ -589,12 +593,14 @@
 </footer>
 
 <script>
-
-
-
-
   // Active nav
   const secs  = document.querySelectorAll('section[id]');
   const links = document.querySelectorAll('.nav-links a');
   window.addEventListener('scroll',()=>{
-    let ac
+    let active='';
+    secs.forEach(s=>{ if(window.scrollY>=s.offsetTop-130) active=s.id; });
+    links.forEach(a=>{ a.classList.toggle('active', a.getAttribute('href')==='#'+active); });
+  },{passive:true});
+</script>
+</body>
+</html>
