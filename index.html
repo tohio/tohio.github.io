@@ -35,6 +35,7 @@
   }
   @media(hover:hover){ body { cursor: none; } }
 
+<<<<<<< HEAD
   /* ── Cursor (desktop only) ── */
   @media(hover:hover){
   .cur  { position:fixed;top:0;left:0;width:8px;height:8px;background:var(--accent);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .12s,background .2s; }
@@ -43,6 +44,11 @@
   body.hov .ring { width:52px;height:52px;border-color:rgba(26,23,20,.25); }
   }
 
+=======
+
+
+
+>>>>>>> 293a5ce (updated readme with linkedin)
   /* ── Grain (removed - causes dark bg on mobile Safari) ── */
 
   /* ── NAV ── */
@@ -110,7 +116,11 @@
 
   /* ── STRIP ── */
   .strip { border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);overflow:hidden;padding:.85rem 0;background:var(--cream); }
+<<<<<<< HEAD
   .strip-track { display:flex;white-space:nowrap;animation:ticker 18s linear infinite; }
+=======
+  .strip-track { display:flex;white-space:nowrap;animation:ticker 9s linear infinite; }
+>>>>>>> 293a5ce (updated readme with linkedin)
   .s-item { font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--light);padding:0 2.5rem; }
   .s-item.hi { color:var(--accent); }
   @keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
@@ -243,12 +253,17 @@
   .fback:hover { color:var(--accent); }
 
   /* ── Scroll reveal ── */
+<<<<<<< HEAD
   @media(hover:hover){
     .rv { opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease; }
     .rv.in { opacity:1;transform:none; }
   }
   @media(hover:none){ .rv { opacity:1;transform:none; } }
   .d1{transition-delay:.1s} .d2{transition-delay:.2s} .d3{transition-delay:.3s} .d4{transition-delay:.4s} .d5{transition-delay:.5s}
+=======
+  .rv { opacity:1;transform:none; }
+
+>>>>>>> 293a5ce (updated readme with linkedin)
 
   /* ── Responsive ── */
   @media(max-width:860px) {
@@ -269,8 +284,6 @@
 </head>
 <body>
 
-<div class="cur" id="cur"></div>
-<div class="ring" id="ring"></div>
 
 <!-- NAV -->
 
@@ -532,7 +545,7 @@
         <span class="cl-label">AI Platform</span><span class="cl-val">View full architecture</span><span class="cl-arr">↗</span>
       </a>
       <div class="clink cstatic">
-        <span class="cl-label">LinkedIn</span><span class="cl-val">linkedin.com/in/yourhandle</span><span class="cl-arr"></span>
+        <span class="cl-label">LinkedIn</span><span class="cl-val">linkedin.com/in/tijani-o-b4563026</span><span class="cl-arr"></span>
       </div>
     </div>
   </div>
@@ -543,6 +556,7 @@
   <a href="#" class="fback">Back to top ↑</a>
 </footer>
 
+<<<<<<< HEAD
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 
 // Cursor
@@ -560,6 +574,12 @@ document.querySelectorAll(‘a,.stag’).forEach(el=>{
 el.addEventListener(‘mouseenter’,()=>document.body.classList.add(‘hov’));
 el.addEventListener(‘mouseleave’,()=>document.body.classList.remove(‘hov’));
 });
+=======
+<script>
+
+
+
+>>>>>>> 293a5ce (updated readme with linkedin)
 
 // Scroll reveal
 const revealEls = document.querySelectorAll(’.rv’);
