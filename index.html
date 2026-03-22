@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tijani Ohiokpehai — AI Systems Engineer</title>
+<title>Tijani Ohiokpehai — AI Systems Architect</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
@@ -197,8 +197,8 @@
   .pinfra:hover { background:rgba(124,111,196,.1); }
   .pinfra-left  { display:flex;flex-direction:column;gap:.35rem; }
   .pinfra-label { font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#7c6fc4; }
-  .pinfra-text  { font-family:var(--sans);font-size:.92rem;font-weight:300;color:var(--mid);font-style:italic; }
-  .pinfra-name { font-family:var(--serif);font-size:1.15rem;font-weight:400;color:var(--ink);font-style:normal;margin-right:.15rem; }
+  .pinfra-text  { font-family:var(--sans);font-size:.92rem;font-weight:300;color:var(--mid);font-style:normal; }
+  .pinfra .pname { font-family:var(--serif) !important;font-size:1.15rem;font-weight:400;color:var(--ink);font-style:normal; }
   .pinfra-arrow { font-size:.8rem;color:#7c6fc4;transition:transform .2s; }
   .pinfra:hover .pinfra-arrow { transform:translate(3px,-3px); }
 
@@ -237,6 +237,17 @@
   .fback { font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;color:var(--light);text-decoration:none;transition:color .2s; }
   .fback:hover { color:var(--accent); }
 
+
+  /* ── CREDENTIALS ── */
+  .cred-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:3vw; }
+  .cred-group { padding-top:1.5rem; border-top:1px solid var(--rule); }
+  .cred-label { font-family:var(--mono); font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin-bottom:1.25rem; }
+  .cred-list { display:flex; flex-direction:column; gap:.1rem; }
+  .cred-item { display:flex; justify-content:space-between; align-items:baseline; gap:1rem; padding:.65rem 0; border-bottom:1px solid var(--rule); }
+  .cred-item:last-child { border-bottom:none; }
+  .cred-name { font-family:var(--sans); font-size:.95rem; font-weight:400; color:var(--ink); }
+  .cred-issuer { font-family:var(--mono); font-size:.6rem; letter-spacing:.1em; color:var(--mid); white-space:nowrap; flex-shrink:0; }
+  @media(max-width:860px){ .cred-grid { grid-template-columns:1fr; } }
   /* ── Scroll reveal ── */
   .rv { opacity:1;transform:none; }
 
@@ -266,6 +277,8 @@
   <ul class="nav-links">
     <li><span class="nav-num">01</span><a href="#work" class="active">Work</a></li>
     <li><div class="ndiv"></div></li>
+    <li><a href="#platform">Platform</a></li>
+    <li><div class="ndiv"></div></li>
     <li><a href="#about">About</a></li>
     <li><div class="ndiv"></div></li>
     <li><a href="#contact">Contact</a></li>
@@ -288,10 +301,11 @@
     <div class="hero-intro">
       <div class="hero-rule"></div>
       <p class="hero-bio">
-        I'm Tijani Ohiokpehai — an AI systems engineer who builds
-        <strong>from first principles.</strong> My work spans the full arc from training
-        language models from scratch to <strong>autonomous multi-agent orchestration</strong>,
-        running on a production Kubernetes platform I designed and operate.
+        I'm Tijani Ohiokpehai — an AI Systems Architect with <strong>18+ years</strong>
+        of engineering leadership. I design and build production-grade LLM systems,
+        agentic workflows, and the <strong>cloud platforms</strong> that run them —
+        focused on execution boundaries, cost control, and reliable system behavior
+        under real-world constraints.
       </p>
     </div>
   </div>
@@ -425,16 +439,50 @@
   </div>
 </section>
 
+<!-- PLATFORM SCHEMATIC -->
+<section class="section" id="platform">
+  <div class="s-header rv"><span class="s-num">02</span><h2 class="s-title">Platform Architecture</h2><div class="s-line"></div></div>
+  <p class="platform-intro rv">Five independent AI systems — each a distinct design pattern — deployed onto a shared Kubernetes platform via GitOps. Not a pipeline. Not a monolith. A platform.</p>
+  <div class="pgrid rv">
+    <a class="pcell" href="https://github.com/tohio/rag-pipeline" target="_blank" rel="noopener"><div class="plabel">Pattern 01</div><div class="pname">RAG Pipeline</div><div class="pdetail">Deterministic retrieval · chunking · embeddings · vector search</div></a>
+    <a class="pcell" href="https://github.com/tohio/agentic-rag" target="_blank" rel="noopener"><div class="plabel">Pattern 02</div><div class="pname">Agentic RAG</div><div class="pdetail">Reasoning loop · tool use · query routing · memory</div></a>
+    <a class="pcell" href="https://github.com/tohio/multi-agent" target="_blank" rel="noopener"><div class="plabel">Pattern 03</div><div class="pname">Multi-Agent</div><div class="pdetail">Hierarchical orchestration · parallel execution · synthesis</div></a>
+    <a class="pcell" href="https://github.com/tohio/slm" target="_blank" rel="noopener"><div class="plabel">Pattern 04</div><div class="pname">SLM</div><div class="pdetail">Pre-training · SFT · DPO alignment · custom tokenizer</div></a>
+    <a class="pcell" href="https://github.com/tohio/data-flywheel" target="_blank" rel="noopener"><div class="plabel">Pattern 05</div><div class="pname">Data Flywheel</div><div class="pdetail">Log curation · LoRA fine-tuning · LLM judge · auto-promotion</div></a>
+    <a class="pinfra" href="https://github.com/tohio/ai-infra" target="_blank" rel="noopener">
+      <div class="pinfra-left">
+        <div class="pinfra-label">Shared Platform</div>
+        <div class="pname">AI Infrastructure</div>
+        <div class="pinfra-text">Kubernetes (EKS/GKE) · Terraform · ArgoCD GitOps · Prometheus · Grafana · KEDA · External Secrets</div>
+      </div>
+      <span class="pinfra-arrow">↗</span>
+    </a>
+  </div>
+</section>
+
+<!-- PRINCIPLES -->
+<section class="section">
+  <div class="s-header rv"><span class="s-num">03</span><h2 class="s-title">Design Principles</h2><div class="s-line"></div></div>
+  <div class="pgrid2">
+    <div class="pr rv"><div class="pr-num">01 / Independence</div><h3 class="pr-title">Systems that stand alone</h3><p class="pr-body">Each system is developed, evaluated, and deployed independently. No hidden coupling. This reflects how production AI platforms actually operate — not as a chain, but as a portfolio of distinct capabilities on shared infrastructure.</p></div>
+    <div class="pr rv"><div class="pr-num">02 / Intentionality</div><h3 class="pr-title">Model assignment by task</h3><p class="pr-body">The right model for each job. Opus for complex orchestration. Haiku for fast extraction. GPT-4o for structured document parsing. DPO over PPO at small scale. KEDA over HPA for queue-driven workloads. Every choice has a documented reason.</p></div>
+    <div class="pr rv"><div class="pr-num">03 / Clarity</div><h3 class="pr-title">Reasoning made visible</h3><p class="pr-body">Agentic systems should be traceable. Tool calls, routing decisions, reasoning steps — none of this belongs in a black box. Per-system Grafana dashboards surface the metrics that actually matter for each workload, not generic platform averages.</p></div>
+    <div class="pr rv"><div class="pr-num">04 / Resilience</div><h3 class="pr-title">Graceful degradation</h3><p class="pr-body">Every tool catches exceptions and returns a descriptive result rather than raising. Agents receive errors and reason about them. The flywheel records rejection reasons explicitly. Alert rules fire before users notice. Systems fail informatively, not silently.</p></div>
+    <div class="pr rv"><div class="pr-num">05 / Production Depth</div><h3 class="pr-title">Built for real conditions</h3><p class="pr-body">Every system accounts for the failure modes that only appear at scale: TLS via cert-manager, secrets sourced from cloud managers not files, OIDC for CI credentials with no long-lived keys, structured logs shipped to Loki, alert rules that fire before users notice. The infrastructure layer makes these concrete, not theoretical.</p></div>
+    <div class="pr rv"><div class="pr-num">06 / Extensibility</div><h3 class="pr-title">Patterns, not products</h3><p class="pr-body">Each system implements a distinct architectural pattern — deterministic retrieval, agentic reasoning, multi-agent orchestration, model training, continuous improvement — independently deployable and documented with the decisions that shaped it, including architecture decision records for non-obvious choices.</p></div>
+  </div>
+</section>
+
 <!-- ABOUT -->
 <section class="section" id="about">
-  <div class="s-header rv"><span class="s-num">02</span><h2 class="s-title">About</h2><div class="s-line"></div></div>
+  <div class="s-header rv"><span class="s-num">04</span><h2 class="s-title">About</h2><div class="s-line"></div></div>
   <div class="about-grid">
-    <blockquote class="about-pull rv">Full-stack AI engineering — from tokenizer design and model training to distributed deployment and continuous model improvement.</blockquote>
+    <blockquote class="about-pull rv">18+ years of engineering leadership — from database architecture to cloud platforms to production AI systems.</blockquote>
     <div>
       <div class="about-body rv">
-        <p>I design and build AI systems end to end — from tokenizer training and model pre-training through to production inference, continuous improvement pipelines, and the Kubernetes platform that runs all of it. My work spans the full arc of modern AI engineering: language model training, retrieval and reasoning systems, autonomous agent orchestration, and self-improving pipelines that get better with every production cycle.</p>
-        <p>The common thread is a platform approach: independent systems, each solving a distinct problem in AI design, deployed on a shared Kubernetes platform with GitOps, observability, and autoscaling. This is how production AI platforms actually operate — not monolithic, but composable, independently deployable, and continuously monitored.</p>
-        <p>I'm particularly interested in the design decisions that only become visible in production: model assignment by task type, why DPO over PPO at small scale, KEDA over HPA for queue-driven workloads, graceful degradation in multi-agent systems, and per-system dashboards that surface the metrics that actually matter.</p>
+        <p>I design and build production-grade AI systems and platforms. My work centres on implementing LLM platforms, retrieval-augmented systems, and agentic orchestration frameworks that integrate generative models with enterprise data and operational workflows — with a consistent focus on execution boundaries, cost control, observability, and reliable system behaviour under real-world constraints.</p>
+        <p>My career progression — from database engineering to cloud platform architecture to AI systems — reflects a consistent focus on building scalable, governed systems at increasing levels of abstraction. Currently Cloud Architect at <strong>Ohio Technologies</strong>, where I have led platform and infrastructure work across the Washington D.C. metro area for 12 years.</p>
+        <p>The AI systems in this portfolio are not isolated experiments. They run on a Kubernetes platform I designed and operate, with GitOps, full observability, and autoscaling. The design decisions that only become visible in production — model assignment by task, KEDA over HPA for queue-driven workloads, DPO over PPO at small scale — are documented throughout.</p>
       </div>
       <div class="about-stack rv">
         <span class="stag">Python</span>
@@ -464,43 +512,58 @@
   </div>
 </section>
 
-<!-- PLATFORM SCHEMATIC -->
-<section class="section" id="platform">
-  <div class="s-header rv"><span class="s-num">03</span><h2 class="s-title">Platform Architecture</h2><div class="s-line"></div></div>
-  <p class="platform-intro rv">Five independent AI systems — each a distinct design pattern — deployed onto a shared Kubernetes platform via GitOps. Not a pipeline. Not a monolith. A platform.</p>
-  <div class="pgrid rv">
-    <a class="pcell" href="https://github.com/tohio/rag-pipeline" target="_blank" rel="noopener"><div class="plabel">Pattern 01</div><div class="pname">RAG Pipeline</div><div class="pdetail">Deterministic retrieval · chunking · embeddings · vector search</div></a>
-    <a class="pcell" href="https://github.com/tohio/agentic-rag" target="_blank" rel="noopener"><div class="plabel">Pattern 02</div><div class="pname">Agentic RAG</div><div class="pdetail">Reasoning loop · tool use · query routing · memory</div></a>
-    <a class="pcell" href="https://github.com/tohio/multi-agent" target="_blank" rel="noopener"><div class="plabel">Pattern 03</div><div class="pname">Multi-Agent</div><div class="pdetail">Hierarchical orchestration · parallel execution · synthesis</div></a>
-    <a class="pcell" href="https://github.com/tohio/slm" target="_blank" rel="noopener"><div class="plabel">Pattern 04</div><div class="pname">SLM</div><div class="pdetail">Pre-training · SFT · DPO alignment · custom tokenizer</div></a>
-    <a class="pcell" href="https://github.com/tohio/data-flywheel" target="_blank" rel="noopener"><div class="plabel">Pattern 05</div><div class="pname">Data Flywheel</div><div class="pdetail">Log curation · LoRA fine-tuning · LLM judge · auto-promotion</div></a>
-    <a class="pinfra" href="https://github.com/tohio/ai-infra" target="_blank" rel="noopener">
-      <div class="pinfra-left">
-        <div class="pinfra-label">Shared Platform</div>
-        <div class="pname">AI Infrastructure</div>
-        <div class="pinfra-text">Kubernetes (EKS/GKE) · Terraform · ArgoCD GitOps · Prometheus · Grafana · KEDA · External Secrets</div>
-      </div>
-      <span class="pinfra-arrow">↗</span>
-    </a>
-  </div>
-</section>
 
-<!-- PRINCIPLES -->
-<section class="section">
-  <div class="s-header rv"><span class="s-num">04</span><h2 class="s-title">Design Principles</h2><div class="s-line"></div></div>
-  <div class="pgrid2">
-    <div class="pr rv"><div class="pr-num">01 / Independence</div><h3 class="pr-title">Systems that stand alone</h3><p class="pr-body">Each system is developed, evaluated, and deployed independently. No hidden coupling. This reflects how production AI platforms actually operate — not as a chain, but as a portfolio of distinct capabilities on shared infrastructure.</p></div>
-    <div class="pr rv"><div class="pr-num">02 / Intentionality</div><h3 class="pr-title">Model assignment by task</h3><p class="pr-body">The right model for each job. Opus for complex orchestration. Haiku for fast extraction. GPT-4o for structured document parsing. DPO over PPO at small scale. KEDA over HPA for queue-driven workloads. Every choice has a documented reason.</p></div>
-    <div class="pr rv"><div class="pr-num">03 / Clarity</div><h3 class="pr-title">Reasoning made visible</h3><p class="pr-body">Agentic systems should be traceable. Tool calls, routing decisions, reasoning steps — none of this belongs in a black box. Per-system Grafana dashboards surface the metrics that actually matter for each workload, not generic platform averages.</p></div>
-    <div class="pr rv"><div class="pr-num">04 / Resilience</div><h3 class="pr-title">Graceful degradation</h3><p class="pr-body">Every tool catches exceptions and returns a descriptive result rather than raising. Agents receive errors and reason about them. The flywheel records rejection reasons explicitly. Alert rules fire before users notice. Systems fail informatively, not silently.</p></div>
-    <div class="pr rv"><div class="pr-num">05 / Production Depth</div><h3 class="pr-title">Built for real conditions</h3><p class="pr-body">Every system accounts for the failure modes that only appear at scale: TLS via cert-manager, secrets sourced from cloud managers not files, OIDC for CI credentials with no long-lived keys, structured logs shipped to Loki, alert rules that fire before users notice. The infrastructure layer makes these concrete, not theoretical.</p></div>
-    <div class="pr rv"><div class="pr-num">06 / Extensibility</div><h3 class="pr-title">Patterns, not products</h3><p class="pr-body">Each system implements a distinct architectural pattern — deterministic retrieval, agentic reasoning, multi-agent orchestration, model training, continuous improvement — independently deployable and documented with the decisions that shaped it, including architecture decision records for non-obvious choices.</p></div>
+<!-- CREDENTIALS -->
+<section class="section" id="credentials">
+  <div class="s-header rv"><span class="s-num">05</span><h2 class="s-title">Credentials</h2><div class="s-line"></div></div>
+  <div class="cred-grid rv">
+
+    <div class="cred-group">
+      <div class="cred-label">AI &amp; Machine Learning</div>
+      <div class="cred-list">
+        <div class="cred-item"><span class="cred-name">NVIDIA-Certified Professional: Agentic AI</span><span class="cred-issuer">NVIDIA · NCP-AAI</span></div>
+        <div class="cred-item"><span class="cred-name">NVIDIA-Certified Professional: Generative AI LLMs</span><span class="cred-issuer">NVIDIA · NCP-GENL</span></div>
+        <div class="cred-item"><span class="cred-name">NVIDIA-Certified Associate: Generative AI LLMs</span><span class="cred-issuer">NVIDIA · NCA-GENL</span></div>
+      </div>
+    </div>
+
+    <div class="cred-group">
+      <div class="cred-label">Kubernetes &amp; Infrastructure as Code</div>
+      <div class="cred-list">
+        <div class="cred-item"><span class="cred-name">Certified Kubernetes Administrator</span><span class="cred-issuer">The Linux Foundation · CKA</span></div>
+        <div class="cred-item"><span class="cred-name">Certified Kubernetes Application Developer</span><span class="cred-issuer">The Linux Foundation · CKAD</span></div>
+        <div class="cred-item"><span class="cred-name">Terraform Associate</span><span class="cred-issuer">HashiCorp</span></div>
+      </div>
+    </div>
+
+    <div class="cred-group">
+      <div class="cred-label">Cloud Platforms</div>
+      <div class="cred-list">
+        <div class="cred-item"><span class="cred-name">Solutions Architect Professional</span><span class="cred-issuer">Amazon Web Services</span></div>
+        <div class="cred-item"><span class="cred-name">DevOps Engineer Professional</span><span class="cred-issuer">Amazon Web Services</span></div>
+        <div class="cred-item"><span class="cred-name">Data Analytics Specialty</span><span class="cred-issuer">Amazon Web Services</span></div>
+        <div class="cred-item"><span class="cred-name">Security Specialty</span><span class="cred-issuer">Amazon Web Services</span></div>
+        <div class="cred-item"><span class="cred-name">Solutions Architect Professional</span><span class="cred-issuer">Google Cloud Platform</span></div>
+        <div class="cred-item"><span class="cred-name">DevOps Engineer Expert</span><span class="cred-issuer">Microsoft Azure</span></div>
+        <div class="cred-item"><span class="cred-name">Administrator Associate</span><span class="cred-issuer">Microsoft Azure</span></div>
+      </div>
+    </div>
+
+    <div class="cred-group">
+      <div class="cred-label">Data &amp; Platform</div>
+      <div class="cred-list">
+        <div class="cred-item"><span class="cred-name">SnowPro Core Certification</span><span class="cred-issuer">Snowflake</span></div>
+        <div class="cred-item"><span class="cred-name">MongoDB Administration &amp; Performance Tuning</span><span class="cred-issuer">MongoDB</span></div>
+        <div class="cred-item"><span class="cred-name">FinOps Certified Practitioner</span><span class="cred-issuer">FinOps Foundation</span></div>
+      </div>
+    </div>
+
   </div>
 </section>
 
 <!-- CONTACT -->
 <section class="section" id="contact">
-  <div class="s-header rv"><span class="s-num">05</span><h2 class="s-title">Contact</h2><div class="s-line"></div></div>
+  <div class="s-header rv"><span class="s-num">06</span><h2 class="s-title">Contact</h2><div class="s-line"></div></div>
   <div class="contact-grid">
     <div class="contact-hl rv">Let's<br><em>build</em><br>something.</div>
     <div class="clinks rv">
@@ -509,6 +572,9 @@
       </a>
       <a class="clink" href="https://github.com/tohio/ai-platform" target="_blank" rel="noopener">
         <span class="cl-label">AI Platform</span><span class="cl-val">View full architecture</span><span class="cl-arr">↗</span>
+      </a>
+      <a class="clink" href="mailto:tohio@hotmail.com">
+        <span class="cl-label">Email</span><span class="cl-val">tohio@hotmail.com</span><span class="cl-arr">↗</span>
       </a>
       <a class="clink" href="https://www.linkedin.com/in/tijani-o-b4563026" target="_blank" rel="noopener">
         <span class="cl-label">LinkedIn</span><span class="cl-val">linkedin.com/in/tijani-o-b4563026</span><span class="cl-arr">↗</span>
