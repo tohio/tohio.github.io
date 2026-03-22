@@ -52,7 +52,7 @@
   .nav-dot  { width:7px;height:7px;background:var(--accent);border-radius:50%;flex-shrink:0; }
   .nav-links { display:flex;align-items:center;gap:.2rem;list-style:none; }
   .nav-links li { display:flex;align-items:center;gap:.2rem; }
-  .nav-num  { font-family:var(--mono);font-size:.58rem;color:var(--accent);letter-spacing:.05em; }
+  .nav-num  { font-family:var(--mono);font-size:.68rem;color:var(--accent);letter-spacing:.05em; }
   .nav-links a { font-family:var(--sans);font-size:.875rem;font-weight:400;color:var(--mid);text-decoration:none;padding:.25rem .75rem;transition:color .2s; }
   .nav-links a:hover, .nav-links a.active { color:var(--ink); }
   .nav-links a.active { font-weight:500; }
@@ -104,7 +104,7 @@
   /* ── STRIP ── */
   .strip { border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);overflow:hidden;padding:.85rem 0;background:var(--cream); }
   .strip-track { display:flex;white-space:nowrap;animation:ticker 9s linear infinite; }
-  .s-item { font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--light);padding:0 2.5rem; }
+  .s-item { font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);padding:0 2.5rem; }
   .s-item.hi { color:var(--accent); }
   @keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
@@ -149,7 +149,7 @@
   .w-accent { font-style:italic;color:var(--accent);transition:color .3s; }
   .w-desc   { font-family:var(--sans);font-size:1.05rem;font-weight:300;line-height:1.65;color:var(--mid);max-width:52ch;transition:color .3s; }
   .w-tags   { display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.25rem; }
-  .w-tag    { font-family:var(--mono);font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--rule);padding:.18rem .55rem;color:var(--mid);transition:border-color .3s,color .3s; }
+  .w-tag    { font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--rule);padding:.22rem .65rem;color:var(--mid);transition:border-color .3s,color .3s; }
   .w-arrow  { font-size:1.05rem;color:var(--light);transition:transform .25s,color .3s;align-self:center; }
 
   /* Infra badge — marks it as the shared platform layer */
@@ -175,18 +175,19 @@
   .about-body { font-family:var(--sans);font-size:1.1rem;font-weight:300;line-height:1.85;color:var(--mid); }
   .about-body p+p { margin-top:1.1em; }
   .about-stack { display:flex;flex-wrap:wrap;gap:.4rem;margin-top:2rem; }
-  .stag { font-family:var(--mono);font-size:.55rem;letter-spacing:.13em;text-transform:uppercase;border:1px solid var(--rule);padding:.22rem .6rem;color:var(--mid);transition:border-color .2s,color .2s;cursor:default; }
+  .stag { font-family:var(--mono);font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;border:1px solid var(--rule);padding:.28rem .75rem;color:var(--ink);transition:border-color .2s,color .2s;cursor:default; }
   .stag:hover { border-color:var(--accent);color:var(--accent); }
 
   /* ── PLATFORM SCHEMATIC ── */
   .platform-intro { font-family:var(--sans);font-size:1rem;font-weight:300;line-height:1.8;color:var(--mid);max-width:58ch;margin-bottom:2rem; }
   .pgrid { display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--rule); }
-  .pcell { padding:1.75rem 1.25rem;border-right:1px solid var(--rule);transition:background .2s; }
+  .pcell { padding:1.75rem 1.25rem;border-right:1px solid var(--rule);transition:background .2s;text-decoration:none;color:inherit;display:block; }
   .pcell:last-child { border-right:none; }
-  .pcell:hover { background:rgba(26,23,20,.03); }
-  .plabel  { font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.55rem; }
+  .pcell:hover { background:rgba(26,23,20,.04); }
+  .pcell:hover .pname { color:var(--accent); }
+  .plabel  { font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.55rem; }
   .pname   { font-family:var(--serif);font-size:1.15rem;font-weight:400;color:var(--ink);margin-bottom:.35rem;line-height:1.25; }
-  .pdetail { font-family:var(--sans);font-size:.92rem;font-weight:300;color:var(--light);line-height:1.55; }
+  .pdetail { font-family:var(--sans);font-size:.92rem;font-weight:300;color:var(--mid);line-height:1.55; }
   .pinfra  {
     grid-column:1/-1;border-top:1px solid rgba(124,111,196,.25);
     padding:1.25rem 1.25rem;display:flex;align-items:center;justify-content:space-between;
@@ -194,9 +195,10 @@
     text-decoration:none;transition:background .2s;
   }
   .pinfra:hover { background:rgba(124,111,196,.1); }
-  .pinfra-left  { display:flex;align-items:center;gap:1.25rem; }
-  .pinfra-label { font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:#7c6fc4; }
+  .pinfra-left  { display:flex;flex-direction:column;gap:.35rem; }
+  .pinfra-label { font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#7c6fc4; }
   .pinfra-text  { font-family:var(--sans);font-size:.92rem;font-weight:300;color:var(--mid);font-style:italic; }
+  .pinfra-name { font-family:var(--serif);font-size:1.15rem;font-weight:400;color:var(--ink);font-style:normal;margin-right:.15rem; }
   .pinfra-arrow { font-size:.8rem;color:#7c6fc4;transition:transform .2s; }
   .pinfra:hover .pinfra-arrow { transform:translate(3px,-3px); }
 
@@ -219,7 +221,7 @@
   }
   .clink:first-child { border-top:1px solid var(--rule); }
   .clink:hover { border-color:var(--accent); }
-  .cl-label { font-family:var(--mono);font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--light); }
+  .cl-label { font-family:var(--mono);font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--mid); }
   .cl-val   { font-family:var(--sans);font-size:1rem;font-weight:400;color:var(--ink);transition:color .2s; }
   .clink:hover .cl-val { color:var(--accent); }
   .cl-arr { font-size:.8rem;color:var(--light);transition:transform .2s,color .2s;text-align:right; }
@@ -350,7 +352,7 @@
     </a>
 
     <!-- 02 Multi-Agent -->
-    <a class="work-item rv d1" href="https://github.com/tohio/multi-agent" target="_blank" rel="noopener">
+    <a class="work-item rv" href="https://github.com/tohio/multi-agent" target="_blank" rel="noopener">
       <span class="w-num">02</span>
       <div class="w-body">
         <h3 class="w-title">Investment Memo <span class="w-accent">Crew</span></h3>
@@ -364,7 +366,7 @@
     </a>
 
     <!-- 03 Data Flywheel -->
-    <a class="work-item rv d2" href="https://github.com/tohio/data-flywheel" target="_blank" rel="noopener">
+    <a class="work-item rv" href="https://github.com/tohio/data-flywheel" target="_blank" rel="noopener">
       <span class="w-num">03</span>
       <div class="w-body">
         <h3 class="w-title">Data <span class="w-accent">Flywheel</span></h3>
@@ -378,7 +380,7 @@
     </a>
 
     <!-- 04 Agentic RAG -->
-    <a class="work-item rv d3" href="https://github.com/tohio/agentic-rag" target="_blank" rel="noopener">
+    <a class="work-item rv" href="https://github.com/tohio/agentic-rag" target="_blank" rel="noopener">
       <span class="w-num">04</span>
       <div class="w-body">
         <h3 class="w-title">Agentic <span class="w-accent">RAG</span></h3>
@@ -407,7 +409,7 @@
     </a>
 
     <!-- 06 RAG Pipeline -->
-    <a class="work-item rv d5" href="https://github.com/tohio/rag-pipeline" target="_blank" rel="noopener">
+    <a class="work-item rv" href="https://github.com/tohio/rag-pipeline" target="_blank" rel="noopener">
       <span class="w-num">06</span>
       <div class="w-body">
         <h3 class="w-title">RAG <span class="w-accent">Pipeline</span></h3>
@@ -429,12 +431,12 @@
   <div class="about-grid">
     <blockquote class="about-pull rv">Full-stack AI engineering — from tokenizer design and model training to distributed deployment and continuous model improvement.</blockquote>
     <div>
-      <div class="about-body rv d1">
+      <div class="about-body rv">
         <p>I design and build AI systems end to end — from tokenizer training and model pre-training through to production inference, continuous improvement pipelines, and the Kubernetes platform that runs all of it. My work spans the full arc of modern AI engineering: language model training, retrieval and reasoning systems, autonomous agent orchestration, and self-improving pipelines that get better with every production cycle.</p>
         <p>The common thread is a platform approach: independent systems, each solving a distinct problem in AI design, deployed on a shared Kubernetes platform with GitOps, observability, and autoscaling. This is how production AI platforms actually operate — not monolithic, but composable, independently deployable, and continuously monitored.</p>
         <p>I'm particularly interested in the design decisions that only become visible in production: model assignment by task type, why DPO over PPO at small scale, KEDA over HPA for queue-driven workloads, graceful degradation in multi-agent systems, and per-system dashboards that surface the metrics that actually matter.</p>
       </div>
-      <div class="about-stack rv d2">
+      <div class="about-stack rv">
         <span class="stag">Python</span>
         <span class="stag">NVIDIA NeMo</span>
         <span class="stag">Megatron-Core</span>
@@ -466,16 +468,17 @@
 <section class="section" id="platform">
   <div class="s-header rv"><span class="s-num">03</span><h2 class="s-title">Platform Architecture</h2><div class="s-line"></div></div>
   <p class="platform-intro rv">Five independent AI systems — each a distinct design pattern — deployed onto a shared Kubernetes platform via GitOps. Not a pipeline. Not a monolith. A platform.</p>
-  <div class="pgrid rv d1">
-    <div class="pcell"><div class="plabel">Pattern 01</div><div class="pname">RAG Pipeline</div><div class="pdetail">Deterministic retrieval · chunking · embeddings · vector search</div></div>
-    <div class="pcell"><div class="plabel">Pattern 02</div><div class="pname">Agentic RAG</div><div class="pdetail">Reasoning loop · tool use · query routing · memory</div></div>
-    <div class="pcell"><div class="plabel">Pattern 03</div><div class="pname">Multi-Agent</div><div class="pdetail">Hierarchical orchestration · parallel execution · synthesis</div></div>
-    <div class="pcell"><div class="plabel">Pattern 04</div><div class="pname">SLM</div><div class="pdetail">Pre-training · SFT · DPO alignment · custom tokenizer</div></div>
-    <div class="pcell"><div class="plabel">Pattern 05</div><div class="pname">Data Flywheel</div><div class="pdetail">Log curation · LoRA fine-tuning · LLM judge · auto-promotion</div></div>
+  <div class="pgrid rv">
+    <a class="pcell" href="https://github.com/tohio/rag-pipeline" target="_blank" rel="noopener"><div class="plabel">Pattern 01</div><div class="pname">RAG Pipeline</div><div class="pdetail">Deterministic retrieval · chunking · embeddings · vector search</div></a>
+    <a class="pcell" href="https://github.com/tohio/agentic-rag" target="_blank" rel="noopener"><div class="plabel">Pattern 02</div><div class="pname">Agentic RAG</div><div class="pdetail">Reasoning loop · tool use · query routing · memory</div></a>
+    <a class="pcell" href="https://github.com/tohio/multi-agent" target="_blank" rel="noopener"><div class="plabel">Pattern 03</div><div class="pname">Multi-Agent</div><div class="pdetail">Hierarchical orchestration · parallel execution · synthesis</div></a>
+    <a class="pcell" href="https://github.com/tohio/slm" target="_blank" rel="noopener"><div class="plabel">Pattern 04</div><div class="pname">SLM</div><div class="pdetail">Pre-training · SFT · DPO alignment · custom tokenizer</div></a>
+    <a class="pcell" href="https://github.com/tohio/data-flywheel" target="_blank" rel="noopener"><div class="plabel">Pattern 05</div><div class="pname">Data Flywheel</div><div class="pdetail">Log curation · LoRA fine-tuning · LLM judge · auto-promotion</div></a>
     <a class="pinfra" href="https://github.com/tohio/ai-infra" target="_blank" rel="noopener">
       <div class="pinfra-left">
         <div class="pinfra-label">Shared Platform</div>
-        <div class="pinfra-text">ai-infra — Kubernetes (EKS/GKE) · Terraform · ArgoCD GitOps · Prometheus · Grafana · KEDA · External Secrets</div>
+        <div class="pname">AI Infrastructure</div>
+        <div class="pinfra-text">Kubernetes (EKS/GKE) · Terraform · ArgoCD GitOps · Prometheus · Grafana · KEDA · External Secrets</div>
       </div>
       <span class="pinfra-arrow">↗</span>
     </a>
@@ -487,11 +490,11 @@
   <div class="s-header rv"><span class="s-num">04</span><h2 class="s-title">Design Principles</h2><div class="s-line"></div></div>
   <div class="pgrid2">
     <div class="pr rv"><div class="pr-num">01 / Independence</div><h3 class="pr-title">Systems that stand alone</h3><p class="pr-body">Each system is developed, evaluated, and deployed independently. No hidden coupling. This reflects how production AI platforms actually operate — not as a chain, but as a portfolio of distinct capabilities on shared infrastructure.</p></div>
-    <div class="pr rv d1"><div class="pr-num">02 / Intentionality</div><h3 class="pr-title">Model assignment by task</h3><p class="pr-body">The right model for each job. Opus for complex orchestration. Haiku for fast extraction. GPT-4o for structured document parsing. DPO over PPO at small scale. KEDA over HPA for queue-driven workloads. Every choice has a documented reason.</p></div>
-    <div class="pr rv d2"><div class="pr-num">03 / Clarity</div><h3 class="pr-title">Reasoning made visible</h3><p class="pr-body">Agentic systems should be traceable. Tool calls, routing decisions, reasoning steps — none of this belongs in a black box. Per-system Grafana dashboards surface the metrics that actually matter for each workload, not generic platform averages.</p></div>
-    <div class="pr rv d1"><div class="pr-num">04 / Resilience</div><h3 class="pr-title">Graceful degradation</h3><p class="pr-body">Every tool catches exceptions and returns a descriptive result rather than raising. Agents receive errors and reason about them. The flywheel records rejection reasons explicitly. Alert rules fire before users notice. Systems fail informatively, not silently.</p></div>
-    <div class="pr rv d2"><div class="pr-num">05 / Production Depth</div><h3 class="pr-title">Built for real conditions</h3><p class="pr-body">Every system accounts for the failure modes that only appear at scale: TLS via cert-manager, secrets sourced from cloud managers not files, OIDC for CI credentials with no long-lived keys, structured logs shipped to Loki, alert rules that fire before users notice. The infrastructure layer makes these concrete, not theoretical.</p></div>
-    <div class="pr rv d3"><div class="pr-num">06 / Extensibility</div><h3 class="pr-title">Patterns, not products</h3><p class="pr-body">Each system implements a distinct architectural pattern — deterministic retrieval, agentic reasoning, multi-agent orchestration, model training, continuous improvement — independently deployable and documented with the decisions that shaped it, including architecture decision records for non-obvious choices.</p></div>
+    <div class="pr rv"><div class="pr-num">02 / Intentionality</div><h3 class="pr-title">Model assignment by task</h3><p class="pr-body">The right model for each job. Opus for complex orchestration. Haiku for fast extraction. GPT-4o for structured document parsing. DPO over PPO at small scale. KEDA over HPA for queue-driven workloads. Every choice has a documented reason.</p></div>
+    <div class="pr rv"><div class="pr-num">03 / Clarity</div><h3 class="pr-title">Reasoning made visible</h3><p class="pr-body">Agentic systems should be traceable. Tool calls, routing decisions, reasoning steps — none of this belongs in a black box. Per-system Grafana dashboards surface the metrics that actually matter for each workload, not generic platform averages.</p></div>
+    <div class="pr rv"><div class="pr-num">04 / Resilience</div><h3 class="pr-title">Graceful degradation</h3><p class="pr-body">Every tool catches exceptions and returns a descriptive result rather than raising. Agents receive errors and reason about them. The flywheel records rejection reasons explicitly. Alert rules fire before users notice. Systems fail informatively, not silently.</p></div>
+    <div class="pr rv"><div class="pr-num">05 / Production Depth</div><h3 class="pr-title">Built for real conditions</h3><p class="pr-body">Every system accounts for the failure modes that only appear at scale: TLS via cert-manager, secrets sourced from cloud managers not files, OIDC for CI credentials with no long-lived keys, structured logs shipped to Loki, alert rules that fire before users notice. The infrastructure layer makes these concrete, not theoretical.</p></div>
+    <div class="pr rv"><div class="pr-num">06 / Extensibility</div><h3 class="pr-title">Patterns, not products</h3><p class="pr-body">Each system implements a distinct architectural pattern — deterministic retrieval, agentic reasoning, multi-agent orchestration, model training, continuous improvement — independently deployable and documented with the decisions that shaped it, including architecture decision records for non-obvious choices.</p></div>
   </div>
 </section>
 
@@ -500,7 +503,7 @@
   <div class="s-header rv"><span class="s-num">05</span><h2 class="s-title">Contact</h2><div class="s-line"></div></div>
   <div class="contact-grid">
     <div class="contact-hl rv">Let's<br><em>build</em><br>something.</div>
-    <div class="clinks rv d1">
+    <div class="clinks rv">
       <a class="clink" href="https://github.com/tohio" target="_blank" rel="noopener">
         <span class="cl-label">GitHub</span><span class="cl-val">github.com/tohio</span><span class="cl-arr">↗</span>
       </a>
