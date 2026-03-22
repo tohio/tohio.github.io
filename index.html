@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -33,22 +32,10 @@
     line-height: 1.6;
     overflow-x: hidden;
   }
-  @media(hover:hover){ body { cursor: none; } }
-
-<<<<<<< HEAD
-  /* ── Cursor (desktop only) ── */
-  @media(hover:hover){
-  .cur  { position:fixed;top:0;left:0;width:8px;height:8px;background:var(--accent);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .12s,background .2s; }
-  .ring { position:fixed;top:0;left:0;width:32px;height:32px;border:1px solid rgba(184,71,42,.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .2s,height .2s,border-color .2s; }
-  body.hov .cur  { transform:translate(-50%,-50%) scale(2.2);background:var(--ink); }
-  body.hov .ring { width:52px;height:52px;border-color:rgba(26,23,20,.25); }
-  }
-
-=======
 
 
 
->>>>>>> 293a5ce (updated readme with linkedin)
+
   /* ── Grain (removed - causes dark bg on mobile Safari) ── */
 
   /* ── NAV ── */
@@ -116,11 +103,7 @@
 
   /* ── STRIP ── */
   .strip { border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);overflow:hidden;padding:.85rem 0;background:var(--cream); }
-<<<<<<< HEAD
-  .strip-track { display:flex;white-space:nowrap;animation:ticker 18s linear infinite; }
-=======
   .strip-track { display:flex;white-space:nowrap;animation:ticker 9s linear infinite; }
->>>>>>> 293a5ce (updated readme with linkedin)
   .s-item { font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--light);padding:0 2.5rem; }
   .s-item.hi { color:var(--accent); }
   @keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
@@ -253,17 +236,8 @@
   .fback:hover { color:var(--accent); }
 
   /* ── Scroll reveal ── */
-<<<<<<< HEAD
-  @media(hover:hover){
-    .rv { opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease; }
-    .rv.in { opacity:1;transform:none; }
-  }
-  @media(hover:none){ .rv { opacity:1;transform:none; } }
-  .d1{transition-delay:.1s} .d2{transition-delay:.2s} .d3{transition-delay:.3s} .d4{transition-delay:.4s} .d5{transition-delay:.5s}
-=======
   .rv { opacity:1;transform:none; }
 
->>>>>>> 293a5ce (updated readme with linkedin)
 
   /* ── Responsive ── */
   @media(max-width:860px) {
@@ -280,13 +254,11 @@
   }
   @media(max-width:520px){ .pgrid{grid-template-columns:1fr} }
 </style>
-
 </head>
 <body>
 
 
 <!-- NAV -->
-
 <nav>
   <a href="#" class="nav-name"><span class="nav-dot"></span>Tijani Ohiokpehai</a>
   <ul class="nav-links">
@@ -299,7 +271,6 @@
 </nav>
 
 <!-- HERO -->
-
 <section class="hero">
   <div class="ghost-layer" aria-hidden="true">
     <span class="ghost">reasoning</span>
@@ -329,7 +300,6 @@
 </section>
 
 <!-- TICKER -->
-
 <div class="strip" aria-hidden="true">
   <div class="strip-track">
     <span class="s-item">Pre-training</span><span class="s-item hi">✦</span>
@@ -361,103 +331,99 @@
 </div>
 
 <!-- WORK -->
-
 <section class="section" id="work">
   <div class="s-header rv"><span class="s-num">01</span><h2 class="s-title">Selected Work</h2><div class="s-line"></div></div>
   <div class="work-list">
 
-```
-<!-- 01 SLM -->
-<a class="work-item rv" href="https://github.com/tohio/slm" target="_blank" rel="noopener">
-  <span class="w-num">01</span>
-  <div class="w-body">
-    <h3 class="w-title">Small Language Model <span class="w-accent">Pipeline</span></h3>
-    <p class="w-desc">Full training lifecycle for a GPT-style transformer — tokenizer design on a domain-specific data mix, pre-training at 125M–1B parameters via Megatron-Core, sequential supervised fine-tuning across chat and code domains, and DPO alignment without a separate reward model. Each stage is independently runnable, reproducible, and built on NVIDIA NeMo across distributed GPU infrastructure.</p>
-    <div class="w-tags">
-      <span class="w-tag">NVIDIA NeMo</span><span class="w-tag">Pre-training</span><span class="w-tag">DPO</span>
-      <span class="w-tag">LoRA SFT</span><span class="w-tag">Custom Tokenizer</span><span class="w-tag">Megatron-Core</span>
-    </div>
-  </div>
-  <span class="w-arrow">↗</span>
-</a>
+    <!-- 01 SLM -->
+    <a class="work-item rv" href="https://github.com/tohio/slm" target="_blank" rel="noopener">
+      <span class="w-num">01</span>
+      <div class="w-body">
+        <h3 class="w-title">Small Language Model <span class="w-accent">Pipeline</span></h3>
+        <p class="w-desc">Full training lifecycle for a GPT-style transformer — tokenizer design on a domain-specific data mix, pre-training at 125M–1B parameters via Megatron-Core, sequential supervised fine-tuning across chat and code domains, and DPO alignment without a separate reward model. Each stage is independently runnable, reproducible, and built on NVIDIA NeMo across distributed GPU infrastructure.</p>
+        <div class="w-tags">
+          <span class="w-tag">NVIDIA NeMo</span><span class="w-tag">Pre-training</span><span class="w-tag">DPO</span>
+          <span class="w-tag">LoRA SFT</span><span class="w-tag">Custom Tokenizer</span><span class="w-tag">Megatron-Core</span>
+        </div>
+      </div>
+      <span class="w-arrow">↗</span>
+    </a>
 
-<!-- 02 Multi-Agent -->
-<a class="work-item rv d1" href="https://github.com/tohio/multi-agent" target="_blank" rel="noopener">
-  <span class="w-num">02</span>
-  <div class="w-body">
-    <h3 class="w-title">Investment Memo <span class="w-accent">Crew</span></h3>
-    <p class="w-desc">Autonomous multi-agent system that researches a public company and produces an institutional-quality investment memo. Five specialist agents — SEC filings, news sentiment, competitor benchmarking, analyst ratings, macro context — run in parallel under a Claude Opus manager. Model assignment is deliberate: Opus for orchestration, GPT-4o for structured document parsing, Haiku for fast extraction.</p>
-    <div class="w-tags">
-      <span class="w-tag">CrewAI</span><span class="w-tag">Claude Opus</span><span class="w-tag">GPT-4o</span>
-      <span class="w-tag">SEC EDGAR</span><span class="w-tag">Hierarchical Process</span>
-    </div>
-  </div>
-  <span class="w-arrow">↗</span>
-</a>
+    <!-- 02 Multi-Agent -->
+    <a class="work-item rv d1" href="https://github.com/tohio/multi-agent" target="_blank" rel="noopener">
+      <span class="w-num">02</span>
+      <div class="w-body">
+        <h3 class="w-title">Investment Memo <span class="w-accent">Crew</span></h3>
+        <p class="w-desc">Autonomous multi-agent system that researches a public company and produces an institutional-quality investment memo. Five specialist agents — SEC filings, news sentiment, competitor benchmarking, analyst ratings, macro context — run in parallel under a Claude Opus manager. Model assignment is deliberate: Opus for orchestration, GPT-4o for structured document parsing, Haiku for fast extraction.</p>
+        <div class="w-tags">
+          <span class="w-tag">CrewAI</span><span class="w-tag">Claude Opus</span><span class="w-tag">GPT-4o</span>
+          <span class="w-tag">SEC EDGAR</span><span class="w-tag">Hierarchical Process</span>
+        </div>
+      </div>
+      <span class="w-arrow">↗</span>
+    </a>
 
-<!-- 03 Data Flywheel -->
-<a class="work-item rv d2" href="https://github.com/tohio/data-flywheel" target="_blank" rel="noopener">
-  <span class="w-num">03</span>
-  <div class="w-body">
-    <h3 class="w-title">Data <span class="w-accent">Flywheel</span></h3>
-    <p class="w-desc">Self-improving AI pipeline that continuously refines language models using real production traffic. Captures inference logs, runs heuristic-only curation with no labeled data required, fine-tunes smaller candidate models via LoRA SFT, evaluates them against a Llama 3.3 70B teacher judge, and promotes the best performer automatically. Models get cheaper and faster over time without sacrificing accuracy.</p>
-    <div class="w-tags">
-      <span class="w-tag">Celery</span><span class="w-tag">FastAPI</span><span class="w-tag">HuggingFace AutoTrain</span>
-      <span class="w-tag">Elasticsearch</span><span class="w-tag">MLflow</span><span class="w-tag">Groq</span>
-    </div>
-  </div>
-  <span class="w-arrow">↗</span>
-</a>
+    <!-- 03 Data Flywheel -->
+    <a class="work-item rv d2" href="https://github.com/tohio/data-flywheel" target="_blank" rel="noopener">
+      <span class="w-num">03</span>
+      <div class="w-body">
+        <h3 class="w-title">Data <span class="w-accent">Flywheel</span></h3>
+        <p class="w-desc">Self-improving AI pipeline that continuously refines language models using real production traffic. Captures inference logs, runs heuristic-only curation with no labeled data required, fine-tunes smaller candidate models via LoRA SFT, evaluates them against a Llama 3.3 70B teacher judge, and promotes the best performer automatically. Models get cheaper and faster over time without sacrificing accuracy.</p>
+        <div class="w-tags">
+          <span class="w-tag">Celery</span><span class="w-tag">FastAPI</span><span class="w-tag">HuggingFace AutoTrain</span>
+          <span class="w-tag">Elasticsearch</span><span class="w-tag">MLflow</span><span class="w-tag">Groq</span>
+        </div>
+      </div>
+      <span class="w-arrow">↗</span>
+    </a>
 
-<!-- 04 Agentic RAG -->
-<a class="work-item rv d3" href="https://github.com/tohio/agentic-rag" target="_blank" rel="noopener">
-  <span class="w-num">04</span>
-  <div class="w-body">
-    <h3 class="w-title">Agentic <span class="w-accent">RAG</span></h3>
-    <p class="w-desc">Retrieval system with an active reasoning loop — a router classifies each query and dispatches it to the right tool: vector retrieval, web search, calculator, or direct LLM response. The agent reflects on intermediate results and re-reasons when the answer is insufficient. Tool calls, routing decisions, and reasoning steps are fully traceable throughout.</p>
-    <div class="w-tags">
-      <span class="w-tag">Python</span><span class="w-tag">Pinecone</span><span class="w-tag">Query Routing</span>
-      <span class="w-tag">Tool Use</span><span class="w-tag">Streamlit</span>
-    </div>
-  </div>
-  <span class="w-arrow">↗</span>
-</a>
+    <!-- 04 Agentic RAG -->
+    <a class="work-item rv d3" href="https://github.com/tohio/agentic-rag" target="_blank" rel="noopener">
+      <span class="w-num">04</span>
+      <div class="w-body">
+        <h3 class="w-title">Agentic <span class="w-accent">RAG</span></h3>
+        <p class="w-desc">Retrieval system with an active reasoning loop — a router classifies each query and dispatches it to the right tool: vector retrieval, web search, calculator, or direct LLM response. The agent reflects on intermediate results and re-reasons when the answer is insufficient. Tool calls, routing decisions, and reasoning steps are fully traceable throughout.</p>
+        <div class="w-tags">
+          <span class="w-tag">Python</span><span class="w-tag">Pinecone</span><span class="w-tag">Query Routing</span>
+          <span class="w-tag">Tool Use</span><span class="w-tag">Streamlit</span>
+        </div>
+      </div>
+      <span class="w-arrow">↗</span>
+    </a>
 
-<!-- 05 AI Infra — platform layer, distinct visual treatment -->
-<a class="work-item infra-item rv d4" href="https://github.com/tohio/ai-infra" target="_blank" rel="noopener">
-  <span class="w-num">05</span>
-  <div class="w-body">
-    <h3 class="w-title">AI Platform <span class="w-accent">Infrastructure</span> <span class="w-badge">Platform Layer</span></h3>
-    <p class="w-desc">Production-grade Kubernetes platform that deploys and operates the entire AI portfolio. Provisioned via Terraform on EKS or GKE, GitOps-driven by ArgoCD, with per-application Grafana dashboards (reasoning step counts, curation drop rates, flywheel cycle history), KEDA autoscaling on Redis queue depth for Celery workers, and zero secrets in git via External Secrets Operator.</p>
-    <div class="w-tags">
-      <span class="w-tag">Kubernetes</span><span class="w-tag">Terraform</span><span class="w-tag">ArgoCD</span>
-      <span class="w-tag">Prometheus</span><span class="w-tag">Grafana</span><span class="w-tag">KEDA</span>
-      <span class="w-tag">EKS / GKE</span><span class="w-tag">GitHub Actions</span>
-    </div>
-  </div>
-  <span class="w-arrow">↗</span>
-</a>
+    <!-- 05 AI Infra — platform layer, distinct visual treatment -->
+    <a class="work-item infra-item rv d4" href="https://github.com/tohio/ai-infra" target="_blank" rel="noopener">
+      <span class="w-num">05</span>
+      <div class="w-body">
+        <h3 class="w-title">AI Platform <span class="w-accent">Infrastructure</span> <span class="w-badge">Platform Layer</span></h3>
+        <p class="w-desc">Production-grade Kubernetes platform that deploys and operates the entire AI portfolio. Provisioned via Terraform on EKS or GKE, GitOps-driven by ArgoCD, with per-application Grafana dashboards (reasoning step counts, curation drop rates, flywheel cycle history), KEDA autoscaling on Redis queue depth for Celery workers, and zero secrets in git via External Secrets Operator.</p>
+        <div class="w-tags">
+          <span class="w-tag">Kubernetes</span><span class="w-tag">Terraform</span><span class="w-tag">ArgoCD</span>
+          <span class="w-tag">Prometheus</span><span class="w-tag">Grafana</span><span class="w-tag">KEDA</span>
+          <span class="w-tag">EKS / GKE</span><span class="w-tag">GitHub Actions</span>
+        </div>
+      </div>
+      <span class="w-arrow">↗</span>
+    </a>
 
-<!-- 06 RAG Pipeline -->
-<a class="work-item rv d5" href="https://github.com/tohio/rag-pipeline" target="_blank" rel="noopener">
-  <span class="w-num">06</span>
-  <div class="w-body">
-    <h3 class="w-title">RAG <span class="w-accent">Pipeline</span></h3>
-    <p class="w-desc">Modular retrieval-augmented generation pipeline covering the full document lifecycle: ingestion, recursive chunking with configurable overlap, provider-agnostic embedding layer, vector store with evaluation metrics, and a multi-LLM generation stage. Retrieval precision, answer faithfulness, and end-to-end latency are measured at every query.</p>
-    <div class="w-tags">
-      <span class="w-tag">Python</span><span class="w-tag">Chroma</span><span class="w-tag">Embeddings</span>
-      <span class="w-tag">Gradio</span><span class="w-tag">Docker</span>
-    </div>
-  </div>
-  <span class="w-arrow">↗</span>
-</a>
-```
+    <!-- 06 RAG Pipeline -->
+    <a class="work-item rv d5" href="https://github.com/tohio/rag-pipeline" target="_blank" rel="noopener">
+      <span class="w-num">06</span>
+      <div class="w-body">
+        <h3 class="w-title">RAG <span class="w-accent">Pipeline</span></h3>
+        <p class="w-desc">Modular retrieval-augmented generation pipeline covering the full document lifecycle: ingestion, recursive chunking with configurable overlap, provider-agnostic embedding layer, vector store with evaluation metrics, and a multi-LLM generation stage. Retrieval precision, answer faithfulness, and end-to-end latency are measured at every query.</p>
+        <div class="w-tags">
+          <span class="w-tag">Python</span><span class="w-tag">Chroma</span><span class="w-tag">Embeddings</span>
+          <span class="w-tag">Gradio</span><span class="w-tag">Docker</span>
+        </div>
+      </div>
+      <span class="w-arrow">↗</span>
+    </a>
 
   </div>
 </section>
 
 <!-- ABOUT -->
-
 <section class="section" id="about">
   <div class="s-header rv"><span class="s-num">02</span><h2 class="s-title">About</h2><div class="s-line"></div></div>
   <div class="about-grid">
@@ -497,7 +463,6 @@
 </section>
 
 <!-- PLATFORM SCHEMATIC -->
-
 <section class="section" id="platform">
   <div class="s-header rv"><span class="s-num">03</span><h2 class="s-title">Platform Architecture</h2><div class="s-line"></div></div>
   <p class="platform-intro rv">Five independent AI systems — each a distinct design pattern — deployed onto a shared Kubernetes platform via GitOps. Not a pipeline. Not a monolith. A platform.</p>
@@ -518,7 +483,6 @@
 </section>
 
 <!-- PRINCIPLES -->
-
 <section class="section">
   <div class="s-header rv"><span class="s-num">04</span><h2 class="s-title">Design Principles</h2><div class="s-line"></div></div>
   <div class="pgrid2">
@@ -532,7 +496,6 @@
 </section>
 
 <!-- CONTACT -->
-
 <section class="section" id="contact">
   <div class="s-header rv"><span class="s-num">05</span><h2 class="s-title">Contact</h2><div class="s-line"></div></div>
   <div class="contact-grid">
@@ -556,41 +519,13 @@
   <a href="#" class="fback">Back to top ↑</a>
 </footer>
 
-<<<<<<< HEAD
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-
-// Cursor
-const cur = document.getElementById(‘cur’);
-const ring = document.getElementById(‘ring’);
-let mx=-200,my=-200,rx=-200,ry=-200;
-document.addEventListener(‘mousemove’, e=>{ mx=e.clientX; my=e.clientY; });
-(function loop(){
-cur.style.left=mx+‘px’; cur.style.top=my+‘px’;
-rx+=(mx-rx)*.1; ry+=(my-ry)*.1;
-ring.style.left=rx+‘px’; ring.style.top=ry+‘px’;
-requestAnimationFrame(loop);
-})();
-document.querySelectorAll(‘a,.stag’).forEach(el=>{
-el.addEventListener(‘mouseenter’,()=>document.body.classList.add(‘hov’));
-el.addEventListener(‘mouseleave’,()=>document.body.classList.remove(‘hov’));
-});
-=======
 <script>
 
 
 
->>>>>>> 293a5ce (updated readme with linkedin)
 
-// Scroll reveal
-const revealEls = document.querySelectorAll(’.rv’);
-const io = new IntersectionObserver(entries=>{
-entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add(‘in’); io.unobserve(e.target); } });
-},{threshold:0, rootMargin:‘0px 0px -40px 0px’});
-revealEls.forEach(el=>io.observe(el));
-setTimeout(()=>{ revealEls.forEach(el=>el.classList.add(‘in’)); }, 1200);
-
-// Active nav
-const secs  = document.querySelectorAll(‘section[id]’);
-const links = document.querySelectorAll(’.nav-links a’);
-window.addEventListener(‘scroll’,()=>{
-let ac
+  // Active nav
+  const secs  = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll',()=>{
+    let ac
