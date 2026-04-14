@@ -287,7 +287,7 @@
     <li class="nav-hide-mobile"><div class="ndiv"></div></li>
     <li><a href="#about">About</a></li>
     <li><div class="ndiv"></div></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact">Find Me</a></li>
   </ul>
 </nav>
 
@@ -307,7 +307,7 @@
     <div class="hero-intro">
       <div class="hero-rule"></div>
       <p class="hero-bio">
-        I'm Tijani Ohiokpehai — an AI Systems Architect with <strong>18+ years</strong>
+        I'm Tijani Ohiokpehai — an AI Systems Architect with <strong>19+ years</strong>
         of engineering leadership. I design and build production-grade <strong>LLM systems,
         agentic workflows,</strong> and the <strong>cloud platforms</strong> that run them —
         focused on execution boundaries, cost control, and reliable system behavior
@@ -332,7 +332,7 @@
     <span class="s-item">Kubernetes</span><span class="s-item hi">✦</span>
     <span class="s-item">ArgoCD GitOps</span><span class="s-item hi">✦</span>
     <span class="s-item">Terraform</span><span class="s-item hi">✦</span>
-    <span class="s-item">NeMo</span><span class="s-item hi">✦</span>
+    <span class="s-item">vLLM</span><span class="s-item hi">✦</span>
     <span class="s-item">KEDA</span><span class="s-item hi">✦</span>
     <span class="s-item">Prometheus</span><span class="s-item hi">✦</span>
     <span class="s-item">CrewAI</span><span class="s-item hi">✦</span>
@@ -345,7 +345,7 @@
     <span class="s-item">Kubernetes</span><span class="s-item hi">✦</span>
     <span class="s-item">ArgoCD GitOps</span><span class="s-item hi">✦</span>
     <span class="s-item">Terraform</span><span class="s-item hi">✦</span>
-    <span class="s-item">NeMo</span><span class="s-item hi">✦</span>
+    <span class="s-item">vLLM</span><span class="s-item hi">✦</span>
     <span class="s-item">KEDA</span><span class="s-item hi">✦</span>
     <span class="s-item">Prometheus</span><span class="s-item hi">✦</span>
     <span class="s-item">CrewAI</span><span class="s-item hi">✦</span>
@@ -362,10 +362,10 @@
       <span class="w-num">01</span>
       <div class="w-body">
         <h3 class="w-title">Small Language Model <span class="w-accent">Pipeline</span></h3>
-        <p class="w-desc">Full training lifecycle for a GPT-style transformer — tokenizer design on a domain-specific data mix, pre-training at 125M–1B parameters via Megatron-Core, sequential supervised fine-tuning across chat and code domains, and DPO alignment without a separate reward model. Each stage is independently runnable, reproducible, and built on NVIDIA NeMo across distributed GPU infrastructure.</p>
+        <p class="w-desc">End-to-end pipeline for training a custom decoder-only transformer from scratch — RoPE positional encoding, RMSNorm, SwiGLU activations, and Grouped Query Attention. Ten independently runnable stages: data curation, validation, BPE tokenizer training, pretraining, sequential SFT, DPO alignment, benchmark evaluation, export, and production serving via vLLM on Kubernetes. Published models: tohio/slm-125m · tohio/slm-350m · tohio/slm-1b.</p>
         <div class="w-tags">
-          <span class="w-tag">NVIDIA NeMo</span><span class="w-tag">Pre-training</span><span class="w-tag">DPO</span>
-          <span class="w-tag">LoRA SFT</span><span class="w-tag">Custom Tokenizer</span><span class="w-tag">Megatron-Core</span>
+          <span class="w-tag">HuggingFace</span><span class="w-tag">Custom Architecture</span><span class="w-tag">DPO</span>
+          <span class="w-tag">SFT</span><span class="w-tag">vLLM</span><span class="w-tag">Pre-training</span>
         </div>
       </div>
       <span class="w-arrow">↗</span>
@@ -449,11 +449,14 @@
 <section class="section" id="platform">
   <div class="s-header rv"><span class="s-num">02</span><h2 class="s-title">Platform Architecture</h2><div class="s-line"></div></div>
   <p class="platform-intro rv">Five independent AI systems — each a distinct design pattern — deployed onto a shared Kubernetes platform via GitOps. Not a pipeline. Not a monolith. A platform.</p>
+  <div style="margin-bottom:1.5rem;">
+    <a href="https://github.com/tohio/ai-platform" target="_blank" rel="noopener" style="font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#7c6fc4;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:color .2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='#7c6fc4'">View full platform architecture ↗</a>
+  </div>
   <div class="pgrid rv">
     <a class="pcell" href="https://github.com/tohio/rag-pipeline" target="_blank" rel="noopener"><div class="plabel">Pattern 01</div><div class="pname">RAG Pipeline</div><div class="pdetail">Deterministic retrieval · chunking · embeddings · vector search</div></a>
     <a class="pcell" href="https://github.com/tohio/agentic-rag" target="_blank" rel="noopener"><div class="plabel">Pattern 02</div><div class="pname">Agentic RAG</div><div class="pdetail">Reasoning loop · tool use · query routing · memory</div></a>
     <a class="pcell" href="https://github.com/tohio/multi-agent" target="_blank" rel="noopener"><div class="plabel">Pattern 03</div><div class="pname">Multi-Agent</div><div class="pdetail">Hierarchical orchestration · parallel execution · synthesis</div></a>
-    <a class="pcell" href="https://github.com/tohio/slm" target="_blank" rel="noopener"><div class="plabel">Pattern 04</div><div class="pname">SLM</div><div class="pdetail">Pre-training · SFT · DPO alignment · custom tokenizer</div></a>
+    <a class="pcell" href="https://github.com/tohio/slm" target="_blank" rel="noopener"><div class="plabel">Pattern 04</div><div class="pname">SLM</div><div class="pdetail">Custom architecture · SFT · DPO · vLLM serving</div></a>
     <a class="pcell" href="https://github.com/tohio/data-flywheel" target="_blank" rel="noopener"><div class="plabel">Pattern 05</div><div class="pname">Data Flywheel</div><div class="pdetail">Log curation · LoRA fine-tuning · LLM judge · auto-promotion</div></a>
     <a class="pinfra" href="https://github.com/tohio/ai-infra" target="_blank" rel="noopener">
       <div class="pinfra-left">
@@ -464,6 +467,7 @@
       <span class="pinfra-arrow">↗</span>
     </a>
   </div>
+
 </section>
 
 <!-- PRINCIPLES -->
@@ -483,7 +487,7 @@
 <section class="section" id="about">
   <div class="s-header rv"><span class="s-num">04</span><h2 class="s-title">About</h2><div class="s-line"></div></div>
   <div class="about-grid">
-    <blockquote class="about-pull rv">18+ years of engineering leadership — from database architecture to cloud platforms to production AI systems.</blockquote>
+    <blockquote class="about-pull rv">19+ years of engineering leadership — from database architecture to cloud platforms to production AI systems.</blockquote>
     <div>
       <div class="about-body rv">
         <p>I design and build production-grade AI systems and platforms. My work centres on implementing LLM platforms, retrieval-augmented systems, and agentic orchestration frameworks that integrate generative models with enterprise data and operational workflows — with a consistent focus on execution boundaries, cost control, observability, and reliable system behaviour under real-world constraints.</p>
@@ -492,8 +496,8 @@
       </div>
       <div class="about-stack rv">
         <span class="stag">Python</span>
-        <span class="stag">NVIDIA NeMo</span>
-        <span class="stag">Megatron-Core</span>
+        <span class="stag">vLLM</span>
+        <span class="stag">datatrove</span>
         <span class="stag">LangChain</span>
         <span class="stag">CrewAI</span>
         <span class="stag">Pinecone</span>
@@ -569,15 +573,15 @@
 
 <!-- CONTACT -->
 <section class="section" id="contact">
-  <div class="s-header rv"><span class="s-num">06</span><h2 class="s-title">Contact</h2><div class="s-line"></div></div>
+  <div class="s-header rv"><span class="s-num">06</span><h2 class="s-title">Find Me</h2><div class="s-line"></div></div>
   <div class="contact-grid">
-    <div class="contact-hl rv">Let's<br><em>build</em><br>something.</div>
+    <div class="contact-hl rv">Let's<br><em>connect.</em></div>
     <div class="clinks rv">
       <a class="clink" href="https://github.com/tohio" target="_blank" rel="noopener">
         <span class="cl-label">GitHub</span><span class="cl-val">github.com/tohio</span><span class="cl-arr">↗</span>
       </a>
-      <a class="clink" href="https://github.com/tohio/ai-platform" target="_blank" rel="noopener">
-        <span class="cl-label">AI Platform</span><span class="cl-val">View full architecture</span><span class="cl-arr">↗</span>
+      <a class="clink" href="https://huggingface.co/tohio" target="_blank" rel="noopener">
+        <span class="cl-label">HuggingFace</span><span class="cl-val">huggingface.co/tohio</span><span class="cl-arr">↗</span>
       </a>
 
       <a class="clink" href="https://www.linkedin.com/in/tijani-o-b4563026" target="_blank" rel="noopener">
