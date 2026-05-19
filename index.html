@@ -180,9 +180,9 @@
 
   /* ── PLATFORM SCHEMATIC ── */
   .platform-intro { font-family:var(--sans);font-size:1rem;font-weight:300;line-height:1.8;color:var(--mid);max-width:58ch;margin-bottom:2rem; }
-  .pgrid { display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--rule); }
+  .pgrid { display:grid;grid-template-columns:repeat(6,1fr);border:1px solid var(--rule); }
   .pcell { padding:1.75rem 1.25rem;border-right:1px solid var(--rule);transition:background .2s;text-decoration:none;color:inherit;display:block; }
-  .pcell:last-child { border-right:none; }
+  .pcell:nth-of-type(6) { border-right:none; }
   .pcell:hover { background:rgba(26,23,20,.04); }
   .pcell:hover .pname { color:var(--accent); }
   .plabel  { font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.55rem; }
@@ -255,7 +255,7 @@
   /* ── Responsive ── */
   @media(max-width:860px) {
     .about-grid{grid-template-columns:1fr}
-    .pgrid{grid-template-columns:1fr 1fr}
+    .pgrid{grid-template-columns:repeat(3,1fr)}
     .pgrid2{grid-template-columns:1fr;gap:1.5rem}
     .contact-grid{grid-template-columns:1fr}
     .work-item{grid-template-columns:2rem 1fr}
@@ -329,6 +329,7 @@
     <span class="s-item">Agentic RAG</span><span class="s-item hi">✦</span>
     <span class="s-item">Multi-Agent Orchestration</span><span class="s-item hi">✦</span>
     <span class="s-item">Data Flywheel</span><span class="s-item hi">✦</span>
+    <span class="s-item">Synthetic Data</span><span class="s-item hi">✦</span>
     <span class="s-item">Kubernetes</span><span class="s-item hi">✦</span>
     <span class="s-item">ArgoCD GitOps</span><span class="s-item hi">✦</span>
     <span class="s-item">Terraform</span><span class="s-item hi">✦</span>
@@ -342,6 +343,7 @@
     <span class="s-item">Agentic RAG</span><span class="s-item hi">✦</span>
     <span class="s-item">Multi-Agent Orchestration</span><span class="s-item hi">✦</span>
     <span class="s-item">Data Flywheel</span><span class="s-item hi">✦</span>
+    <span class="s-item">Synthetic Data</span><span class="s-item hi">✦</span>
     <span class="s-item">Kubernetes</span><span class="s-item hi">✦</span>
     <span class="s-item">ArgoCD GitOps</span><span class="s-item hi">✦</span>
     <span class="s-item">Terraform</span><span class="s-item hi">✦</span>
@@ -427,9 +429,23 @@
       <span class="w-arrow">↗</span>
     </a>
 
-    <!-- 06 AI Infra — platform layer, distinct visual treatment -->
-    <a class="work-item infra-item rv d4" href="https://github.com/tohio/ai-infra" target="_blank" rel="noopener">
+    <!-- 06 Synthetic Data Pipeline -->
+    <a class="work-item rv" href="https://github.com/tohio/slm-synthetic-data" target="_blank" rel="noopener">
       <span class="w-num">06</span>
+      <div class="w-body">
+        <h3 class="w-title">Synthetic Data <span class="w-accent">Pipeline</span></h3>
+        <p class="w-desc">Production-scale synthetic data generation for SLM pretraining and post-training. Four signal families — arithmetic reasoning, Python tasks, scenario-based MCQs, and factual restraint — generated via Groq-hosted Llama with JSON object mode, exponential backoff with jitter, per-batch diversity controls, schema validation, exact deduplication with per-stage duplicate reporting, and Hugging Face publishing with auto-generated dataset cards. Three runtime profiles (speed / balanced / quality), validated from 200K smoke tests to 600M-token production runs. Exact dedup over fuzzy MinHash — synthetic examples intentionally share schemas.</p>
+        <div class="w-tags">
+          <span class="w-tag">Groq</span><span class="w-tag">Llama 3.1 / 3.3</span><span class="w-tag">HuggingFace</span>
+          <span class="w-tag">JSONL</span><span class="w-tag">Schema Validation</span><span class="w-tag">Dedup</span>
+        </div>
+      </div>
+      <span class="w-arrow">↗</span>
+    </a>
+
+    <!-- 07 AI Infra — platform layer, distinct visual treatment -->
+    <a class="work-item infra-item rv d4" href="https://github.com/tohio/ai-infra" target="_blank" rel="noopener">
+      <span class="w-num">07</span>
       <div class="w-body">
         <h3 class="w-title">AI Platform <span class="w-accent">Infrastructure</span> <span class="w-badge">Platform Layer</span></h3>
         <p class="w-desc">Production-grade Kubernetes platform that deploys and operates the entire AI portfolio. Provisioned via Terraform on EKS or GKE, GitOps-driven by ArgoCD, with per-application Grafana dashboards (reasoning step counts, curation drop rates, flywheel cycle history), KEDA autoscaling on Redis queue depth for Celery workers, and zero secrets in git via External Secrets Operator.</p>
@@ -448,7 +464,7 @@
 <!-- PLATFORM SCHEMATIC -->
 <section class="section" id="platform">
   <div class="s-header rv"><span class="s-num">02</span><h2 class="s-title">Platform Architecture</h2><div class="s-line"></div></div>
-  <p class="platform-intro rv">Five independent AI systems — each a distinct design pattern — deployed onto a shared Kubernetes platform via GitOps. Not a pipeline. Not a monolith. A platform.</p>
+  <p class="platform-intro rv">Six independent AI systems — each a distinct design pattern — deployed onto a shared Kubernetes platform via GitOps. Not a pipeline. Not a monolith. A platform.</p>
   <div style="margin-bottom:1.5rem;">
     <a href="https://github.com/tohio/ai-platform" target="_blank" rel="noopener" style="font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#7c6fc4;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:color .2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='#7c6fc4'">View full platform architecture ↗</a>
   </div>
@@ -457,7 +473,8 @@
     <a class="pcell" href="https://github.com/tohio/agentic-rag" target="_blank" rel="noopener"><div class="plabel">Pattern 02</div><div class="pname">Agentic RAG</div><div class="pdetail">Reasoning loop · tool use · query routing · memory</div></a>
     <a class="pcell" href="https://github.com/tohio/multi-agent" target="_blank" rel="noopener"><div class="plabel">Pattern 03</div><div class="pname">Multi-Agent</div><div class="pdetail">Hierarchical orchestration · parallel execution · synthesis</div></a>
     <a class="pcell" href="https://github.com/tohio/slm" target="_blank" rel="noopener"><div class="plabel">Pattern 04</div><div class="pname">SLM</div><div class="pdetail">Custom architecture · SFT · DPO · vLLM serving</div></a>
-    <a class="pcell" href="https://github.com/tohio/data-flywheel" target="_blank" rel="noopener"><div class="plabel">Pattern 05</div><div class="pname">Data Flywheel</div><div class="pdetail">Log curation · LoRA fine-tuning · LLM judge · auto-promotion</div></a>
+    <a class="pcell" href="https://github.com/tohio/slm-synthetic-data" target="_blank" rel="noopener"><div class="plabel">Pattern 05</div><div class="pname">Synthetic Data</div><div class="pdetail">Signal generation · schema validation · dedup · HF publishing</div></a>
+    <a class="pcell" href="https://github.com/tohio/data-flywheel" target="_blank" rel="noopener"><div class="plabel">Pattern 06</div><div class="pname">Data Flywheel</div><div class="pdetail">Log curation · LoRA fine-tuning · LLM judge · auto-promotion</div></a>
     <a class="pinfra" href="https://github.com/tohio/ai-infra" target="_blank" rel="noopener">
       <div class="pinfra-left">
         <div class="pinfra-label">Shared Platform</div>
@@ -479,7 +496,8 @@
     <div class="pr rv"><div class="pr-num">03 / Clarity</div><h3 class="pr-title">Reasoning made visible</h3><p class="pr-body">Agentic systems should be traceable. Tool calls, routing decisions, reasoning steps — none of this belongs in a black box. Per-system Grafana dashboards surface the metrics that actually matter for each workload, not generic platform averages.</p></div>
     <div class="pr rv"><div class="pr-num">04 / Resilience</div><h3 class="pr-title">Graceful degradation</h3><p class="pr-body">Every tool catches exceptions and returns a descriptive result rather than raising. Agents receive errors and reason about them. The flywheel records rejection reasons explicitly. Alert rules fire before users notice. Systems fail informatively, not silently.</p></div>
     <div class="pr rv"><div class="pr-num">05 / Production Depth</div><h3 class="pr-title">Built for real conditions</h3><p class="pr-body">Every system accounts for the failure modes that only appear at scale: TLS via cert-manager, secrets sourced from cloud managers not files, OIDC for CI credentials with no long-lived keys, structured logs shipped to Loki, alert rules that fire before users notice. The infrastructure layer makes these concrete, not theoretical.</p></div>
-    <div class="pr rv"><div class="pr-num">06 / Extensibility</div><h3 class="pr-title">Patterns, not products</h3><p class="pr-body">Each system implements a distinct architectural pattern — deterministic retrieval, agentic reasoning, multi-agent orchestration, model training, continuous improvement — independently deployable and documented with the decisions that shaped it, including architecture decision records for non-obvious choices.</p></div>
+    <div class="pr rv"><div class="pr-num">06 / Extensibility</div><h3 class="pr-title">Patterns, not products</h3><p class="pr-body">Each system implements a distinct architectural pattern — deterministic retrieval, agentic reasoning, multi-agent orchestration, model training, synthetic data generation, continuous improvement — independently deployable and documented with the decisions that shaped it, including architecture decision records for non-obvious choices.</p></div>
+    <div class="pr rv"><div class="pr-num">07 / Curation</div><h3 class="pr-title">Data shapes the model</h3><p class="pr-body">Two systems on this portfolio exist to control what models learn from. The synthetic data pipeline generates training signal with schema validation, exact deduplication, and per-stage duplicate reporting — because high duplicate rates indicate a generation-diversity problem, not a scaling problem. The data flywheel curates production traffic with heuristic-only filtering and rejection reasons recorded explicitly. Architecture decisions get attention; data decisions deserve the same.</p></div>
   </div>
 </section>
 
